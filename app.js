@@ -509,6 +509,7 @@ let inpAdress = document.getElementById('adressPoluch')
 let div_admin=document.getElementById('div_admin')
 let deist_role = document.getElementById('deist_role')
 let roles_select = document.getElementById('roles')
+let div_polz = document.getElementById('div_polz')
 
 async function getAccounts() {
 	console.log('aaaaaaaa');
@@ -565,7 +566,7 @@ async function usRole(a){
 		// getGolos()
 		deist_role.textContent  = ''
 		deist_role.textContent  = 'Админ'
-
+	
 	}
 	if(map.role == 0){
 		deist_role.textContent = ''
@@ -584,7 +585,18 @@ async function usRole(a){
 	
 	}
   }
-
+  let btn_sm_role = document.createElement('button')
+  btn_sm_role.addEventListener('click',()=>{
+	console.log('dhskjhdshj')
+	smenRole()
+	if(role.textContent == 'Админ(Временно пользователь)'){
+		role.textContent = 'Админ'
+	}
+	else{
+		role.textContent = 'Админ(Временно пользователь)'
+	}
+	
+})
   async function addRole(){
 	console.log("ddddd")
 	let map = await myContract.methods.returnMapping(user.textContent).call()
@@ -594,15 +606,32 @@ async function usRole(a){
 		// getGolos()
 		role.textContent = ''
 		role.textContent = 'Админ'
+	
+		btn_sm_role.textContent= 'сменить временно роль'
+		div_polz.append(btn_sm_role)
 		div_admin.style.display = 'flex'
 		usRole(inpAdress.value)
+		
 
 	}
 	if(map.role == 0){
-		role.textContent = ''
+		if(map.status == true){
+			role.textContent = ''
+			role.textContent = 'Админ(Временно пользователь)'
+		
+			btn_sm_role.textContent= 'сменить временно роль'
+			div_polz.append(btn_sm_role)
+			div_admin.style.display = 'flex'
+			usRole(inpAdress.value)
+			
+		}
+		if(map.status == false){
+			role.textContent = ''
 		role.textContent = 'Покупатель'
 		div_admin.style.display = 'none'
 		// role.textContent = ''
+		btn_sm_role.remove()
+		}
 	}
 	if(map.role == 2){
 		role.textContent = ''
@@ -615,8 +644,13 @@ async function usRole(a){
 		role.textContent = 'Магазин'
 		// role.textContent = ''
 		div_admin.style.display = 'none'
+		btn_sm_role.textContent= 'сменить временно роль'
+		div_polz.append(btn_sm_role)
 	}
 
+}
+async function smenRole(){
+	let shop =  await myContract.methods.pereclRole().send({from:user.textContent,gas:'677676'})
 }
 function crRoles(){
 	

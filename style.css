@@ -4,6 +4,9 @@
 .trnz{
     display: flex;
 }
+.btn_sm_role{
+    display: none;
+}
 /* .div_polz{
     display: flex;
 }
