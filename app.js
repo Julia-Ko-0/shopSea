@@ -505,6 +505,10 @@ let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
 let role = document.getElementById('role_A')
+let inpAdress = document.getElementById('adressPoluch')
+let div_admin=document.getElementById('div_admin')
+let deist_role = document.getElementById('deist_role')
+let roles_select = document.getElementById('roles')
 
 async function getAccounts() {
 	console.log('aaaaaaaa');
@@ -513,6 +517,7 @@ async function getAccounts() {
 	console.log(accounts);
   
 	crAdress(accounts)
+	crAdressAdd(accounts)
 	// crPol(accounts)
   
 }
@@ -529,6 +534,20 @@ function crAdress(mas){
 	// addRole()
    
   }
+  async function crAdressAdd(mas){
+	for(let i = 0; i< mas.length;i++){
+	  let adress = document.createElement('option')
+	  if(mas[i]!=user.textContent){
+		adress.textContent = mas[i]
+		inpAdress.append(adress)
+	
+	  }
+	
+	}
+	// balansEl(mas[0])
+	// addRole()
+   
+  }
   let myContract = new web3.eth.Contract(abi,contractAddress)
 function usName(name){
 	user.textContent = name
@@ -538,6 +557,32 @@ function usName(name){
 	// div_pr.innerHTML=''
 	//   getSpisok()
 	  // addRole()
+  }
+async function usRole(a){
+	console.log(a)
+	let map = await myContract.methods.returnMapping(a).call()
+	if(map.role == 1){
+		// getGolos()
+		deist_role.textContent  = ''
+		deist_role.textContent  = 'Админ'
+
+	}
+	if(map.role == 0){
+		deist_role.textContent = ''
+		deist_role.textContent  = 'Покупатель'
+
+
+	}
+	if(map.role == 2){
+		deist_role.textContent = ''
+		deist_role.textContent  = 'Продовец'
+	
+	}
+	if(map.role == 3){
+		deist_role.textContent = ''
+		deist_role.textContent  = 'Магазин'
+	
+	}
   }
 
   async function addRole(){
@@ -549,29 +594,49 @@ function usName(name){
 		// getGolos()
 		role.textContent = ''
 		role.textContent = 'Админ'
+		div_admin.style.display = 'flex'
+		usRole(inpAdress.value)
+
 	}
 	if(map.role == 0){
 		role.textContent = ''
 		role.textContent = 'Покупатель'
+		div_admin.style.display = 'none'
 		// role.textContent = ''
 	}
 	if(map.role == 2){
 		role.textContent = ''
 		role.textContent = 'Продовец'
 		// role.textContent = ''
+		div_admin.style.display = 'none'
 	}
 	if(map.role == 3){
 		role.textContent = ''
 		role.textContent = 'Магазин'
 		// role.textContent = ''
+		div_admin.style.display = 'none'
 	}
 
 }
-
+function crRoles(){
+	
+}
 async function add_Shop(_adrs,_role){
-	let shop =  await myContract.methods.appAdmOrShop(_adrs,_role).send({from:user.textContent,gas:'677676'})
+	console.log(_adrs,_role)
+	let r
+	if(_role == 'Магазин'){
+		r = 3
+	}
+	if(_role == 'Админ'){
+		r = 1
+	}
+	if(_role == 'Покупатель'){
+		r = 0
+	}
+	console.log(r)
+	let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
 	console.log(shop)
 }
 function crShop(){
-
+	
 }
