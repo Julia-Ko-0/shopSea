@@ -1,5 +1,10 @@
 let abi =[
 	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -13,175 +18,6 @@ let abi =[
 			}
 		],
 		"name": "appAdmOrShop",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "ans",
-				"type": "string"
-			}
-		],
-		"name": "appOtv",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr_shop",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ocenk",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "rev",
-				"type": "string"
-			}
-		],
-		"name": "appOtz",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			}
-		],
-		"name": "appPolzs",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr_pr",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "adr_shop",
-				"type": "address"
-			}
-		],
-		"name": "appProdov",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "kyda",
-				"type": "uint256"
-			}
-		],
-		"name": "dizLike",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "kyda",
-				"type": "uint256"
-			}
-		],
-		"name": "like",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "otv",
-				"type": "bool"
-			},
-			{
-				"internalType": "address",
-				"name": "zpr",
-				"type": "address"
-			}
-		],
-		"name": "otvNaZapr",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "pereclRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			}
-		],
-		"name": "ponizProd",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "shop",
-				"type": "address"
-			}
-		],
-		"name": "zaprs",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -262,6 +98,47 @@ let abi =[
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ans",
+				"type": "string"
+			}
+		],
+		"name": "appOtv",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr_shop",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ocenk",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "rev",
+				"type": "string"
+			}
+		],
+		"name": "appOtz",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -286,6 +163,42 @@ let abi =[
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "appPolzs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr_pr",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "adr_shop",
+				"type": "address"
+			}
+		],
+		"name": "appProdov",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -406,11 +319,6 @@ let abi =[
 		"name": "appShop",
 		"outputs": [
 			{
-				"internalType": "address",
-				"name": "adr",
-				"type": "address"
-			},
-			{
 				"internalType": "string",
 				"name": "name",
 				"type": "string"
@@ -422,6 +330,24 @@ let abi =[
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "kyda",
+				"type": "uint256"
+			}
+		],
+		"name": "dizLike",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -462,6 +388,62 @@ let abi =[
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "kyda",
+				"type": "uint256"
+			}
+		],
+		"name": "like",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "otv",
+				"type": "bool"
+			},
+			{
+				"internalType": "address",
+				"name": "zpr",
+				"type": "address"
+			}
+		],
+		"name": "otvNaZapr",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pereclRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "ponizProd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "_adr",
 				"type": "address"
@@ -494,18 +476,33 @@ let abi =[
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "shop",
+				"type": "address"
+			}
+		],
+		"name": "zaprs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	}
 ]
 // import { abi } from "./abi";
 
 
 
-let contractAddress = "0xB0c253360df77d9E5924342A278765745d84Abcf";
+let contractAddress = "0x4810cad34eeBE397D5d17Be17eCdf09804fCbA33";
 let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
 let role = document.getElementById('role_A')
 let inpAdress = document.getElementById('adressPoluch')
+let inpShop = document.getElementById('adressShop')
+inpShop.style.display = 'none'
 let div_admin=document.getElementById('div_admin')
 let deist_role = document.getElementById('deist_role')
 let roles_select = document.getElementById('roles')
@@ -552,12 +549,7 @@ function crAdress(mas){
   let myContract = new web3.eth.Contract(abi,contractAddress)
 function usName(name){
 	user.textContent = name
-	// balansEl(name)
 	addRole()
-	// div.innerHTML=''
-	// div_pr.innerHTML=''
-	//   getSpisok()
-	  // addRole()
   }
 async function usRole(a){
 	console.log(a)
@@ -591,6 +583,7 @@ async function usRole(a){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Продовец'
 		
+		
 	
 	}
 	if(map.role == 3){
@@ -615,7 +608,7 @@ async function usRole(a){
 })
 async function role_new(){
 	let map = await myContract.methods.returnMapping(user.textContent).call()
-	if(role.textContent == '(Временно пользователь)'){
+	if(role.textContent == 'Админ(Временно пользователь)'|| role.textContent == 'Магазин(Временно пользователь)'|| role.textContent == '(Временно пользователь)'){
 		console.log(map.role)
 		if(map.role == 1){
 			role.textContent = ''
@@ -628,7 +621,15 @@ async function role_new(){
 		
 	}
 	else{
-		role.textContent = '(Временно пользователь)'
+		if(map.role == 3){
+			let p = 'Магазин'
+		}
+		if(map.role == 1){
+			let p = 'Админ'
+		}
+		role.textContent = ''
+		role.textContent = `${p}(Временно пользователь)`
+		// console.log(role.textContent)
 	}
 }
   async function addRole(){
@@ -686,12 +687,12 @@ async function role_new(){
 async function smenRole(){
 	let shop =  await myContract.methods.pereclRole().send({from:user.textContent,gas:'677676'})
 	let map = await myContract.methods.returnMapping(user.textContent).call()
-	if(role.textContent == '(Временно пользователь)'){
+	if(role.textContent == 'Админ(Временно пользователь)'|| role.textContent == 'Магазин(Временно пользователь)'|| role.textContent == '(Временно пользователь)'){
 		console.log(map.role)
 		if(map.role == 1){
 			console.log('sdnjkvdnbkj')
 
-			role.textContent = ''
+		role.textContent = ''
 		role.textContent = 'Админ'
 		}
 		if(map.role == 3){
@@ -701,11 +702,19 @@ async function smenRole(){
 		
 	}
 	else{
-		role.textContent = '(Временно пользователь)'
+		role.textContent = `${role.textContent}(Временно пользователь)`
+		console.log(role.textContent)
 	}
 }
-function crRoles(){
-	
+function db_imp(a){
+	if(a == 'Продовец'){
+		inpShop.style.display = 'flex'
+		let Shops 
+		inpShop.append()
+	}
+	else{
+		inpShop.style.display = 'none'
+	}
 }
 async function add_Shop(_adrs,_role){
 	console.log(_adrs,_role)
@@ -719,9 +728,20 @@ async function add_Shop(_adrs,_role){
 	if(_role == 'Покупатель'){
 		r = 0
 	}
+	if(_role == 'Продовец'){
+		r = 2
+		
+	}
 	console.log(r)
-	let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
-	console.log(shop)
+	if(r == 0 || r==1||r==3){
+		let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
+		console.log(shop)
+	}
+	if(r == 2){
+		let shop =  await myContract.methods.appProdov(_adrs,adr_shop).send({from:user.textContent,gas:'677676'})
+		console.log(shop)
+	}
+
 }
 function crShop(){
 	
