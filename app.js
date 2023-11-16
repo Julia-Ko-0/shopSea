@@ -568,14 +568,23 @@ async function usRole(a){
 		deist_role.textContent  = 'Админ'
 		let opt = document.getElementById('adm')
 		let opt1 = document.getElementById('pok')
+		let opt2 = document.getElementById('sh')
+
 		opt.style.display = 'none'
+		opt1.style.display = 'flex'
+		opt2.style.display = 'flex'
 	
 	}
 	if(map.role == 0){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Покупатель'
 		let opt = document.getElementById('pok')
+		let opt1 = document.getElementById('adm')
+
+		let opt2 = document.getElementById('sh')
 		opt.style.display = 'none'
+		opt1.style.display = 'flex'
+		opt2.style.display = 'flex'
 
 	}
 	if(map.role == 2){
@@ -588,7 +597,12 @@ async function usRole(a){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Магазин'
 		let opt = document.getElementById('sh')
+		let opt2 = document.getElementById('adm')
+		let opt1 = document.getElementById('pok')
+
 		opt.style.display = 'none'
+		opt1.style.display = 'flex'
+		opt2.style.display = 'flex'
 	
 	}
   }
