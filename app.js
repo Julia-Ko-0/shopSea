@@ -500,7 +500,7 @@ let abi =[
 
 
 
-let contractAddress = "0xc5d53199bA54adF870D0057F81e9Ab52400B2a9f";
+let contractAddress = "0xB0c253360df77d9E5924342A278765745d84Abcf";
 let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
@@ -566,22 +566,29 @@ async function usRole(a){
 		// getGolos()
 		deist_role.textContent  = ''
 		deist_role.textContent  = 'Админ'
+		let opt = document.getElementById('adm')
+		let opt1 = document.getElementById('pok')
+		opt.style.display = 'none'
 	
 	}
 	if(map.role == 0){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Покупатель'
-
+		let opt = document.getElementById('pok')
+		opt.style.display = 'none'
 
 	}
 	if(map.role == 2){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Продовец'
+		
 	
 	}
 	if(map.role == 3){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Магазин'
+		let opt = document.getElementById('sh')
+		opt.style.display = 'none'
 	
 	}
   }
@@ -589,14 +596,27 @@ async function usRole(a){
   btn_sm_role.addEventListener('click',()=>{
 	console.log('dhskjhdshj')
 	smenRole()
-	if(role.textContent == 'Админ(Временно пользователь)'){
-		role.textContent = 'Админ'
-	}
-	else{
-		role.textContent = 'Админ(Временно пользователь)'
-	}
+	// role_new()
 	
 })
+async function role_new(){
+	let map = await myContract.methods.returnMapping(user.textContent).call()
+	if(role.textContent == '(Временно пользователь)'){
+		console.log(map.role)
+		if(map.role == 1){
+			role.textContent = ''
+		role.textContent = 'Админ'
+		}
+		if(map.role == 3){
+			role.textContent = ''
+		role.textContent = 'Магазин'
+		}
+		
+	}
+	else{
+		role.textContent = '(Временно пользователь)'
+	}
+}
   async function addRole(){
 	console.log("ddddd")
 	let map = await myContract.methods.returnMapping(user.textContent).call()
@@ -617,7 +637,7 @@ async function usRole(a){
 	if(map.role == 0){
 		if(map.status == true){
 			role.textContent = ''
-			role.textContent = 'Админ(Временно пользователь)'
+			role.textContent = '(Временно пользователь)'
 		
 			btn_sm_role.textContent= 'сменить временно роль'
 			div_polz.append(btn_sm_role)
@@ -651,6 +671,24 @@ async function usRole(a){
 }
 async function smenRole(){
 	let shop =  await myContract.methods.pereclRole().send({from:user.textContent,gas:'677676'})
+	let map = await myContract.methods.returnMapping(user.textContent).call()
+	if(role.textContent == '(Временно пользователь)'){
+		console.log(map.role)
+		if(map.role == 1){
+			console.log('sdnjkvdnbkj')
+
+			role.textContent = ''
+		role.textContent = 'Админ'
+		}
+		if(map.role == 3){
+			role.textContent = ''
+		role.textContent = 'Магазин'
+		}
+		
+	}
+	else{
+		role.textContent = '(Временно пользователь)'
+	}
 }
 function crRoles(){
 	
