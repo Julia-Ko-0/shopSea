@@ -495,7 +495,7 @@ let abi =[
 
 
 
-let contractAddress = "0x4810cad34eeBE397D5d17Be17eCdf09804fCbA33";
+let contractAddress = "0xebBA44c3a16863970842F23Cbb5cDbafa3ac21E5";
 let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
@@ -507,6 +507,7 @@ let div_admin=document.getElementById('div_admin')
 let deist_role = document.getElementById('deist_role')
 let roles_select = document.getElementById('roles')
 let div_polz = document.getElementById('div_polz')
+let shopsApp = document.getElementById('shopsApp')
 
 async function getAccounts() {
 	console.log('aaaaaaaa');
@@ -516,8 +517,47 @@ async function getAccounts() {
   
 	crAdress(accounts)
 	crAdressAdd(accounts)
+	crAddShop(accounts)
+	for(let i =0;i<accounts.length;i++){
+		console.log(accounts[i])
+		let a = await myContract.methods.returnShop(accounts[i]).call()
+		console.log(a)
+		// crShops(accounts[i])
+	}
 	// crPol(accounts)
   
+}
+async function crShops(ac){
+	let a = await myContract.methods.returnShop(ac).call()
+	console.log(a)
+	// if(sh.rabMagz){
+	// 	if(sh.name ==''){
+	// 		crShop('naz')
+	// 	}
+	// 	else{
+	// 		crShop(sh.name)
+	// 	}
+		
+	// }
+}
+function crShop(a){
+	let d_s = document.createElement('div')
+	let name = document.createElement('h2')
+	name.textContent = a
+	d_s.append(name)
+	d_s.append(name)
+	// d_s.append(crOtz().d_otz)
+
+
+	
+}
+function crOtz(){
+	let d_otz = document.createElement("div")
+	let n_ot = document.createElement('h2')
+	let s_ot = document.createElement('h3')
+	d_otz.append(n_ot)
+	d_otz.append(s_ot)
+	return d_otz
 }
   getAccounts()
 function crAdress(mas){
@@ -546,6 +586,26 @@ function crAdress(mas){
 	// addRole()
    
   }
+  async function crAddShop(mas){
+	for(let i = 0; i< mas.length;i++){
+		// console.log(mas[i])
+	  let adress = document.createElement('option')
+	  let map = await myContract.methods.returnMapping(mas[i]).call()
+	  console.log(map.role)
+
+	
+			adress.textContent = mas[i]
+			inpShop.append(adress)
+	
+	
+	
+	  
+	
+	}
+	// balansEl(mas[0])
+	// addRole()
+   
+  }
   let myContract = new web3.eth.Contract(abi,contractAddress)
 function usName(name){
 	user.textContent = name
@@ -561,10 +621,12 @@ async function usRole(a){
 		let opt = document.getElementById('adm')
 		let opt1 = document.getElementById('pok')
 		let opt2 = document.getElementById('sh')
+		let opt3 = document.getElementById('pr')
 
 		opt.style.display = 'none'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
+		opt3.style.display = 'flex'
 	
 	}
 	if(map.role == 0){
@@ -572,16 +634,26 @@ async function usRole(a){
 		deist_role.textContent  = 'Покупатель'
 		let opt = document.getElementById('pok')
 		let opt1 = document.getElementById('adm')
-
+		let opt3 = document.getElementById('pr')
 		let opt2 = document.getElementById('sh')
 		opt.style.display = 'none'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
+		opt3.style.display = 'flex'
 
 	}
 	if(map.role == 2){
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Продовец'
+		let opt = document.getElementById('sh')
+		let opt2 = document.getElementById('adm')
+		let opt1 = document.getElementById('pok')
+		let opt3 = document.getElementById('pr')
+		
+		opt.style.display = 'flex'
+		opt1.style.display = 'flex'
+		opt2.style.display = 'flex'
+		opt3.style.display = 'none'
 		
 		
 	
@@ -592,10 +664,12 @@ async function usRole(a){
 		let opt = document.getElementById('sh')
 		let opt2 = document.getElementById('adm')
 		let opt1 = document.getElementById('pok')
+		let opt3 = document.getElementById('pr')
 
 		opt.style.display = 'none'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
+		opt3.style.display = 'flex'
 	
 	}
   }
@@ -673,6 +747,7 @@ async function role_new(){
 		role.textContent = 'Продовец'
 		// role.textContent = ''
 		div_admin.style.display = 'none'
+		btn_sm_role.remove()
 	}
 	if(map.role == 3){
 		role.textContent = ''
@@ -716,7 +791,8 @@ function db_imp(a){
 		inpShop.style.display = 'none'
 	}
 }
-async function add_Shop(_adrs,_role){
+let myArray=[]
+async function add_Shop(_adrs,_role,adr_shop,dv_role){
 	console.log(_adrs,_role)
 	let r
 	if(_role == 'Магазин'){
@@ -733,9 +809,33 @@ async function add_Shop(_adrs,_role){
 		
 	}
 	console.log(r)
+
 	if(r == 0 || r==1||r==3){
-		let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
+		if(dv_role == "Продовец"){
+		 await myContract.methods.get_Prod().call((eror,result)=>{
+				if(!eror){
+					myArray = result
+					console.log(myArray)
+					otrTrans(myArray)
+				}
+				else{console.error(eror)}
+			})
+			console.log(myArray[0].polz)
+			for(let i = 0;i<myArray;i++){
+				if(myArray[i].polz == inpAdress.value){
+					 await myContract.methods.ponizProd(i).send({from:user.textContent,gas:'677676'})
+				}
+
+				
+			}
+			 
+		// console.log(sellers.polz)
+		}
+		else{
+			let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
 		console.log(shop)
+		}
+		
 	}
 	if(r == 2){
 		let shop =  await myContract.methods.appProdov(_adrs,adr_shop).send({from:user.textContent,gas:'677676'})

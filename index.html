@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Переводы</title>
+    <title>shop</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -29,17 +29,20 @@
       <h3>Действующая роль: </h3>
       <h3 id="deist_role"></h3>
       <h3>Новая роль</h3>
-      <select id="roles" onclick="db_imp(roles_select.value)"">
+      <select id="roles" onclick="db_imp(roles_select.value)">
         <option id="adm">Админ</option>
         <option id="sh">Магазин</option>
         <option id="pok">Покупатель</option>
-        <option id="">Продовец</option>
+        <option id="pr">Продовец</option>
       </select>
       <select id="adressShop"onclick="usRole(inpAdress.value)">
       </select>
-      <button onclick="add_Shop(inpAdress.value,roles_select.value)">
+      <button onclick="add_Shop(inpAdress.value,roles_select.value,inpShop.value,deist_role.value)">
         Сменить
       </button>
+
+    </div>
+    <div id="shopsApp">
 
     </div>
 
