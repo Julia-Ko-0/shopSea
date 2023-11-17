@@ -742,14 +742,14 @@ async function getOtzv(sh){
 			kol_diz.textContent = otz[i].dizlake
 			like.addEventListener('click',()=>{
 				dobLike(i,0)
-				kol_diz.textContent--
+				// kol_diz.textContent--
 				kol_like.textContent++
 
 			})
 			diz.addEventListener('click',()=>{
 				dobDiz(i,0)
 				kol_diz.textContent++
-				kol_like.textContent--
+				// kol_like.textContent--
 
 			})
 			d_otz.append(s_ot)
