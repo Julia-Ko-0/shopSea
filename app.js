@@ -695,6 +695,7 @@ async function crShops(ac){
 	}
 
 	let btn = document.createElement("button")
+	
 	name.textContent = ac
 	btn.textContent='otpr'
 	d_s.append(name)
@@ -720,13 +721,23 @@ async function getOtzv(sh){
 		if(otz[i].shop == sh){
 			// crOtz(otz[i].review,otz[i].polz)
 			let d = document.getElementById('d')
+			let like = document.createElement('button')
+			let diz= document.createElement('button')
 			let d_otz = document.createElement("div")
 			let n_ot = document.createElement('h3')
 			let s_ot = document.createElement('h2')
 			n_ot.textContent = `отзыв: ${otz[i].review}`
 			s_ot.textContent = `от кого: ${otz[i].polz}`
+			let kol_like = document.createElement('h3')
+			let kol_diz = document.createElement('h3')
+			like.textContent = 'like'
+			diz.textContent = 'diz'
+			kol_like.textContent = otz[i].like
+			kol_diz.textContent = otz[i].dizlake
 			d_otz.append(s_ot)
 			d_otz.append(n_ot)
+			d_otz.append(kol_like,kol_diz)
+			d_otz.append(like,diz)
 			
 			d.append(d_otz)
 		}
