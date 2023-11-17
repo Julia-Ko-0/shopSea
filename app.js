@@ -732,17 +732,43 @@ async function getOtzv(sh){
 			let kol_diz = document.createElement('h3')
 			like.textContent = 'like'
 			diz.textContent = 'diz'
+			let kol_likeZ = document.createElement('h3')
+			let kol_dizZ = document.createElement('h3')
+
+			kol_likeZ.textContent = `like: `
+			kol_dizZ.textContent = `diz: `
+
 			kol_like.textContent = otz[i].like
 			kol_diz.textContent = otz[i].dizlake
+			like.addEventListener('click',()=>{
+				dobLike(i,0)
+				kol_diz.textContent--
+				kol_like.textContent++
+
+			})
+			diz.addEventListener('click',()=>{
+				dobDiz(i,0)
+				kol_diz.textContent++
+				kol_like.textContent--
+
+			})
 			d_otz.append(s_ot)
 			d_otz.append(n_ot)
-			d_otz.append(kol_like,kol_diz)
+			d_otz.append(kol_likeZ,kol_like,kol_dizZ,kol_diz)
 			d_otz.append(like,diz)
 			
 			d.append(d_otz)
 		}
 		
 	}
+
+}
+async function dobLike(id,kyda){
+	await myContract.methods.like(id,kyda).send({from:user.textContent,gas:'677676'})
+
+}
+async function dobDiz(id,kyda){
+	await myContract.methods.dizLike(id,kyda).send({from:user.textContent,gas:'677676'})
 
 }
 // function crShop(a){
