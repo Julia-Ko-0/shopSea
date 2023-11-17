@@ -386,6 +386,121 @@ let abi =[
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "get_Otvet",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "adres",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "review",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "answer",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "like",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dizlake",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct seaStore.answer[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get_Otz",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "shop",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "polz",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "review",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ocenk",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "like",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dizlake",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct seaStore.review[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get_Prod",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "shop",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "polz",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct seaStore.sellers[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -481,6 +596,37 @@ let abi =[
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_r",
+				"type": "address"
+			}
+		],
+		"name": "revShop",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "rabMagz",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct seaStore.shop",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "shop",
 				"type": "address"
 			}
@@ -495,7 +641,7 @@ let abi =[
 
 
 
-let contractAddress = "0xebBA44c3a16863970842F23Cbb5cDbafa3ac21E5";
+let contractAddress = "0xeE1cB22cfa752489dEAe0a75dF71E57112f08449";
 let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
@@ -520,45 +666,99 @@ async function getAccounts() {
 	crAddShop(accounts)
 	for(let i =0;i<accounts.length;i++){
 		console.log(accounts[i])
-		let a = await myContract.methods.returnShop(accounts[i]).call()
-		console.log(a)
-		// crShops(accounts[i])
+		// let a = await myContract.methods.returnShop(accounts[i]).call()
+		
+		crShops(accounts[i])
 	}
 	// crPol(accounts)
   
 }
 async function crShops(ac){
-	let a = await myContract.methods.returnShop(ac).call()
+	let a = await myContract.methods.revShop(ac).call()
 	console.log(a)
-	// if(sh.rabMagz){
-	// 	if(sh.name ==''){
-	// 		crShop('naz')
-	// 	}
-	// 	else{
-	// 		crShop(sh.name)
-	// 	}
-		
-	// }
-}
-function crShop(a){
-	let d_s = document.createElement('div')
+	if(a.rabMagz == true){
+		console.log(ac)
+		// if(a.name ==''){
+		// 	crShop('naz')
+		// }
+		// else{
+		// 	crShop('mmm')
+		// }
+		let d_s = document.createElement('div')
 	let name = document.createElement('h2')
-	name.textContent = a
+	let inp = document.createElement('input')
+	let inp2 = document.createElement('select')
+	for(let i =1;i<11;i++){
+		let opt=document.createElement('option')
+		opt.textContent = i
+		inp2.append(opt)
+	}
+
+	let btn = document.createElement("button")
+	name.textContent = ac
+	btn.textContent='otpr'
 	d_s.append(name)
-	d_s.append(name)
-	// d_s.append(crOtz().d_otz)
+	d_s.append(inp,inp2,btn)
+	btn.addEventListener('click',()=>{
+		console.log(inp.value)
+		crNewOtz(name.textContent,inp2.value,inp.value)
+	})
+	d_s.id = 'd'	// d_s.append(crOtz('aslcsav','a'))
+	shopsApp.append(d_s)
+	getOtzv(ac)
+		
+	}
+}
+async function crNewOtz(adr_sh,ocen,ot){
+	await myContract.methods.appOtz(adr_sh,ocen,ot).send({from:user.textContent,gas:'677676'})
+}
+async function getOtzv(sh){
+	let otz = await myContract.methods.get_Otz().call()
+	console.log(otz)
+	for(let i =0;i<otz.length;i++){
+		console.log(otz[i].shop,sh)
+		if(otz[i].shop == sh){
+			// crOtz(otz[i].review,otz[i].polz)
+			let d = document.getElementById('d')
+			let d_otz = document.createElement("div")
+			let n_ot = document.createElement('h3')
+			let s_ot = document.createElement('h2')
+			n_ot.textContent = `отзыв: ${otz[i].review}`
+			s_ot.textContent = `от кого: ${otz[i].polz}`
+			d_otz.append(s_ot)
+			d_otz.append(n_ot)
+			
+			d.append(d_otz)
+		}
+		
+	}
+
+}
+// function crShop(a){
+// 	console.log("asasasasasa",a)
+// 	let d_s = document.createElement('div')
+// 	let name = document.createElement('h2')
+// 	name.textContent = a
+// 	d_s.append(name)
+// 	d_s.append(name)
+// 	shopsApp.append(d_s)
+// 	// d_s.append(crOtz().d_otz)
 
 
 	
-}
-function crOtz(){
-	let d_otz = document.createElement("div")
-	let n_ot = document.createElement('h2')
-	let s_ot = document.createElement('h3')
-	d_otz.append(n_ot)
-	d_otz.append(s_ot)
-	return d_otz
-}
+// }
+// function crOtz(text,name){
+// 	console.log(text)
+// 	let d_otz = document.createElement("div")
+// 	let n_ot = document.createElement('h2')
+// 	let s_ot = document.createElement('h3')
+// 	n_ot.textContent = name
+// 	s_ot.textContent = text
+// 	d_otz.append(n_ot)
+// 	d_otz.append(s_ot)
+// 	let d = document.getElementById('d')
+
+// }
   getAccounts()
 function crAdress(mas){
 	for(let i = 0; i< mas.length;i++){
@@ -591,7 +791,7 @@ function crAdress(mas){
 		// console.log(mas[i])
 	  let adress = document.createElement('option')
 	  let map = await myContract.methods.returnMapping(mas[i]).call()
-	  console.log(map.role)
+	//   console.log(map.role)
 
 	
 			adress.textContent = mas[i]
@@ -612,7 +812,7 @@ function usName(name){
 	addRole()
   }
 async function usRole(a){
-	console.log(a)
+	// console.log(a)
 	let map = await myContract.methods.returnMapping(a).call()
 	if(map.role == 1){
 		// getGolos()
