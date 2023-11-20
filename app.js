@@ -948,7 +948,7 @@ async function usRole(a){
 		let opt1 = document.getElementById('pok')
 		let opt2 = document.getElementById('sh')
 		let opt3 = document.getElementById('pr')
-
+		div_Zapr.style.display = 'flex'
 		opt.style.display = 'none'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
@@ -962,6 +962,7 @@ async function usRole(a){
 		let opt1 = document.getElementById('adm')
 		let opt3 = document.getElementById('pr')
 		let opt2 = document.getElementById('sh')
+		div_Zapr.style.display = 'none'
 		opt.style.display = 'none'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
@@ -975,7 +976,7 @@ async function usRole(a){
 		let opt2 = document.getElementById('adm')
 		let opt1 = document.getElementById('pok')
 		let opt3 = document.getElementById('pr')
-		
+		div_Zapr.style.display = 'none'
 		opt.style.display = 'flex'
 		opt1.style.display = 'flex'
 		opt2.style.display = 'flex'
@@ -1049,6 +1050,7 @@ async function role_new(){
 		btn_sm_role.textContent= 'сменить временно роль'
 		div_polz.append(btn_sm_role)
 		div_admin.style.display = 'flex'
+		div_Zapr.style.display = 'flex'
 		usRole(inpAdress.value)
 		
 
@@ -1058,7 +1060,7 @@ async function role_new(){
 		if(map.status == true){
 			role.textContent = ''
 			role.textContent = '(Временно пользователь)'
-		
+			div_Zapr.style.display = 'none'
 			btn_sm_role.textContent= 'сменить временно роль'
 			div_polz.append(btn_sm_role)
 			div_admin.style.display = 'flex'
@@ -1070,6 +1072,7 @@ async function role_new(){
 			role.textContent = ''
 		role.textContent = 'Покупатель'
 		div_admin.style.display = 'none'
+		div_Zapr.style.display = 'none'
 		crAddShop()
 		sm_role.textContent = 'отправить запрос на повышениение'
 		// role.textContent = ''
@@ -1086,7 +1089,7 @@ async function role_new(){
 		role.textContent = 'Продовец'
 		// role.textContent = ''
 		div_admin.style.display = 'none'
-		
+		div_Zapr.style.display = 'none'
 		div_pov_pon.style.display = 'flex'
 		shopSel.style.display='none'
 		sm_role.textContent = 'отправить запрос на понижение'
