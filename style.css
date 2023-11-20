@@ -7,6 +7,17 @@
 .btn_sm_role{
     display: none;
 }
+.div_Zapr{
+    background-color: rgb(184, 221, 253);
+}
+.ddd{
+    display: flex;
+}
+.shopsApp{
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(154, 176, 195);
+}
 /* .div_polz{
     display: flex;
 }

@@ -1,10 +1,5 @@
 let abi =[
 	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -18,6 +13,175 @@ let abi =[
 			}
 		],
 		"name": "appAdmOrShop",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ans",
+				"type": "string"
+			}
+		],
+		"name": "appOtv",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr_shop",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ocenk",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "rev",
+				"type": "string"
+			}
+		],
+		"name": "appOtz",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "appPolzs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "adr_pr",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "adr_shop",
+				"type": "address"
+			}
+		],
+		"name": "appProdov",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "kyda",
+				"type": "uint256"
+			}
+		],
+		"name": "dizLike",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "kyda",
+				"type": "uint256"
+			}
+		],
+		"name": "like",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "otv",
+				"type": "bool"
+			},
+			{
+				"internalType": "address",
+				"name": "zpr",
+				"type": "address"
+			}
+		],
+		"name": "otvNaZapr",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pereclRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "ponizProd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "shop",
+				"type": "address"
+			}
+		],
+		"name": "zaprs",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -98,47 +262,6 @@ let abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "ans",
-				"type": "string"
-			}
-		],
-		"name": "appOtv",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr_shop",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ocenk",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "rev",
-				"type": "string"
-			}
-		],
-		"name": "appOtz",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -163,42 +286,6 @@ let abi =[
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			}
-		],
-		"name": "appPolzs",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "adr_pr",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "adr_shop",
-				"type": "address"
-			}
-		],
-		"name": "appProdov",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -330,24 +417,6 @@ let abi =[
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "kyda",
-				"type": "uint256"
-			}
-		],
-		"name": "dizLike",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -503,62 +572,6 @@ let abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "kyda",
-				"type": "uint256"
-			}
-		],
-		"name": "like",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "otv",
-				"type": "bool"
-			},
-			{
-				"internalType": "address",
-				"name": "zpr",
-				"type": "address"
-			}
-		],
-		"name": "otvNaZapr",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "pereclRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			}
-		],
-		"name": "ponizProd",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "_adr",
 				"type": "address"
@@ -596,6 +609,47 @@ let abi =[
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_adr",
+				"type": "address"
+			}
+		],
+		"name": "returnRes",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "role_zapr",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "shop",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "otvet",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct seaStore.request",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "_r",
 				"type": "address"
 			}
@@ -622,69 +676,116 @@ let abi =[
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "shop",
-				"type": "address"
-			}
-		],
-		"name": "zaprs",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	}
 ]
-// import { abi } from "./abi";
 
+// import abi from "./abi.js";
 
-
-let contractAddress = "0xeE1cB22cfa752489dEAe0a75dF71E57112f08449";
+let contractAddress = "0x795402647912813d7FE428bda85c94D6d61Cdb1c";
 let web3, accounts
 let selectAdress = document.getElementById('adress')
 let user = document.getElementById('user')
 let role = document.getElementById('role_A')
 let inpAdress = document.getElementById('adressPoluch')
 let inpShop = document.getElementById('adressShop')
-inpShop.style.display = 'none'
+
 let div_admin=document.getElementById('div_admin')
+let div_pov_pon = document.getElementById('div_pov_pon')
+let sm_role = document.getElementById('sm_role')
 let deist_role = document.getElementById('deist_role')
 let roles_select = document.getElementById('roles')
 let div_polz = document.getElementById('div_polz')
 let shopsApp = document.getElementById('shopsApp')
+let shopSel = document.getElementById('shopSel')
+let div_Zapr = document.getElementById('div_Zapr')
 
 async function getAccounts() {
 	console.log('aaaaaaaa');
-	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	accounts = await web3.eth.getAccounts();
 	console.log(accounts);
-  
+	// console.log(web3.eth.account[0])
+	
 	crAdress(accounts)
 	crAdressAdd(accounts)
-	crAddShop(accounts)
+	crAddShop()
 	for(let i =0;i<accounts.length;i++){
 		console.log(accounts[i])
 		// let a = await myContract.methods.returnShop(accounts[i]).call()
+		polZaprs(accounts[i])
 		
-		crShops(accounts[i])
 	}
+	crShops()
 	// crPol(accounts)
   
 }
-async function crShops(ac){
-	let a = await myContract.methods.revShop(ac).call()
+async function polZaprs(ac){
+
+	let a = await myContract.methods.returnRes(ac).call()
+	if(a.otvet == false && a.status == true){
+		let divZ = document.createElement('div') 
+	let name = document.createElement('h2')
+	name.textContent = ac
+	let h2 = document.createElement('h2')
+	h2.textContent = a.shop
+	let h3 = document.createElement('h3')
+	h3.textContent = a.role_zapr
+	let btnOt = document.createElement("button")
+	btnOt.textContent='одобрить'
+	let btnOt2 = document.createElement("button")
+	btnOt2.textContent='отклонить'
+	divZ.append(name,h2,h3,btnOt,btnOt2)
+	div_Zapr.append(divZ)
+	btnOt.addEventListener('click',()=>{
+		console.log(ac)
+		otvNa_Z(true,ac)
+		
+	})
+	btnOt2.addEventListener('click',()=>{
+		otvNa_Z(false,ac)
+		
+	})
+	}
+	
+	
+}
+async function otvNa_Z(otv,adrZp){
+	await myContract.methods.otvNaZapr(otv,adrZp).send({from:user.textContent,gas:'677676'})
+	window.location.reload()
+}
+async function crShops(){
+	shopsApp.innerHTML=''
+	let acs = await web3.eth.getAccounts();
+
+	let a = await myContract.methods.revShop(user.textContent).call()
 	console.log(a)
 	if(a.rabMagz == true){
-		console.log(ac)
-		// if(a.name ==''){
-		// 	crShop('naz')
-		// }
-		// else{
-		// 	crShop('mmm')
-		// }
-		let d_s = document.createElement('div')
+		shopsApp.innerHTML=''
+		crKom(user.textContent)
+		
+	}
+	else{
+	
+		for(let i = 0;i<acs.length;i++){
+			let rab = await myContract.methods.revShop(acs[i]).call()
+			if(rab.rabMagz == true){
+				console.log(acs[i])
+				crKom(acs[i])
+			}
+			
+		}
+	}
+}
+let btn = document.createElement("button")
+function crKom(ac){
+	console.log(ac)
+	// if(a.name ==''){
+	// 	crShop('naz')
+	// }
+	// else{
+	// 	crShop('mmm')
+	// }
+	let d_s = document.createElement('div')
 	let name = document.createElement('h2')
 	let inp = document.createElement('input')
 	let inp2 = document.createElement('select')
@@ -693,23 +794,26 @@ async function crShops(ac){
 		opt.textContent = i
 		inp2.append(opt)
 	}
-
-	let btn = document.createElement("button")
-	
-	name.textContent = ac
-	btn.textContent='otpr'
-	d_s.append(name)
-	d_s.append(inp,inp2,btn)
 	btn.addEventListener('click',()=>{
 		console.log(inp.value)
 		crNewOtz(name.textContent,inp2.value,inp.value)
+		crShops()
 	})
+	
+
+	name.textContent = ac
+	btn.textContent='otpr'
+	d_s.append(name)
+	// for(let i = 0;i<masSeleler.length;i++){
+	// 	if()
+	// }
+	d_s.append(inp,inp2,btn)
+
 	d_s.id = 'd'	// d_s.append(crOtz('aslcsav','a'))
 	shopsApp.append(d_s)
 	getOtzv(ac)
-		
-	}
 }
+
 async function crNewOtz(adr_sh,ocen,ot){
 	await myContract.methods.appOtz(adr_sh,ocen,ot).send({from:user.textContent,gas:'677676'})
 }
@@ -719,7 +823,7 @@ async function getOtzv(sh){
 	for(let i =0;i<otz.length;i++){
 		console.log(otz[i].shop,sh)
 		if(otz[i].shop == sh){
-			// crOtz(otz[i].review,otz[i].polz)
+
 			let d = document.getElementById('d')
 			let like = document.createElement('button')
 			let diz= document.createElement('button')
@@ -728,6 +832,8 @@ async function getOtzv(sh){
 			let s_ot = document.createElement('h2')
 			n_ot.textContent = `отзыв: ${otz[i].review}`
 			s_ot.textContent = `от кого: ${otz[i].polz}`
+			let ocenk= document.createElement('h3')
+			ocenk.textContent = otz[i].ocenk
 			let kol_like = document.createElement('h3')
 			let kol_diz = document.createElement('h3')
 			like.textContent = 'like'
@@ -743,7 +849,7 @@ async function getOtzv(sh){
 			like.addEventListener('click',()=>{
 				dobLike(i,0)
 				// kol_diz.textContent--
-				kol_like.textContent++
+				
 
 			})
 			diz.addEventListener('click',()=>{
@@ -754,7 +860,7 @@ async function getOtzv(sh){
 			})
 			d_otz.append(s_ot)
 			d_otz.append(n_ot)
-			d_otz.append(kol_likeZ,kol_like,kol_dizZ,kol_diz)
+			d_otz.append(ocenk,kol_likeZ,kol_like,kol_dizZ,kol_diz)
 			d_otz.append(like,diz)
 			
 			d.append(d_otz)
@@ -771,31 +877,7 @@ async function dobDiz(id,kyda){
 	await myContract.methods.dizLike(id,kyda).send({from:user.textContent,gas:'677676'})
 
 }
-// function crShop(a){
-// 	console.log("asasasasasa",a)
-// 	let d_s = document.createElement('div')
-// 	let name = document.createElement('h2')
-// 	name.textContent = a
-// 	d_s.append(name)
-// 	d_s.append(name)
-// 	shopsApp.append(d_s)
-// 	// d_s.append(crOtz().d_otz)
 
-
-	
-// }
-// function crOtz(text,name){
-// 	console.log(text)
-// 	let d_otz = document.createElement("div")
-// 	let n_ot = document.createElement('h2')
-// 	let s_ot = document.createElement('h3')
-// 	n_ot.textContent = name
-// 	s_ot.textContent = text
-// 	d_otz.append(n_ot)
-// 	d_otz.append(s_ot)
-// 	let d = document.getElementById('d')
-
-// }
   getAccounts()
 function crAdress(mas){
 	for(let i = 0; i< mas.length;i++){
@@ -805,8 +887,7 @@ function crAdress(mas){
 	  user.textContent = mas[0]
 	  addRole()
 	}
-	// balansEl(mas[0])
-	// addRole()
+
    
   }
   async function crAdressAdd(mas){
@@ -823,31 +904,39 @@ function crAdress(mas){
 	// addRole()
    
   }
-  async function crAddShop(mas){
-	for(let i = 0; i< mas.length;i++){
-		// console.log(mas[i])
-	  let adress = document.createElement('option')
-	  let map = await myContract.methods.returnMapping(mas[i]).call()
-	//   console.log(map.role)
-
-	
-			adress.textContent = mas[i]
-			inpShop.append(adress)
-	
-	
-	
+  async function crAddShop(){
+	shopSel.innerHTML=''
+	accounts = await web3.eth.getAccounts();
+	for(let i = 0; i< accounts.length;i++){
+		console.log(accounts[i])
 	  
-	
+	let map = await myContract.methods.returnMapping(accounts[i]).call()
+	  console.log(map.role)
+			if(map.role == 3){
+				let adress = document.createElement('option')
+				let adress1 = document.createElement('option')
+				adress1.innerHTML = accounts[i]
+				adress.innerHTML = accounts[i]
+				console.log(adress1)
+				inpShop.append(adress1)
+				// inpShop.append(`<option>${accounts[i]}</option>`) ;
+				console.log(inpShop)
+				shopSel.append(adress)
+				console.log(shopSel)
+			} 
 	}
-	// balansEl(mas[0])
-	// addRole()
-   
-  }
+ }
   let myContract = new web3.eth.Contract(abi,contractAddress)
 function usName(name){
 	user.textContent = name
 	addRole()
+	crShops()
+	
   }
+  sm_role.addEventListener('click',()=>{
+	console.log(shopSel.value)
+	zpSmRole(shopSel.value)
+})
 async function usRole(a){
 	// console.log(a)
 	let map = await myContract.methods.returnMapping(a).call()
@@ -896,6 +985,7 @@ async function usRole(a){
 	
 	}
 	if(map.role == 3){
+		
 		deist_role.textContent = ''
 		deist_role.textContent  = 'Магазин'
 		let opt = document.getElementById('sh')
@@ -948,11 +1038,14 @@ async function role_new(){
 	let map = await myContract.methods.returnMapping(user.textContent).call()
 	console.log('map',map)
 	console.log(map.role)
+	
+
 	if(map.role == 1){
 		// getGolos()
 		role.textContent = ''
 		role.textContent = 'Админ'
-	
+
+		div_pov_pon.style.display = 'none'
 		btn_sm_role.textContent= 'сменить временно роль'
 		div_polz.append(btn_sm_role)
 		div_admin.style.display = 'flex'
@@ -961,6 +1054,7 @@ async function role_new(){
 
 	}
 	if(map.role == 0){
+		
 		if(map.status == true){
 			role.textContent = ''
 			role.textContent = '(Временно пользователь)'
@@ -968,6 +1062,7 @@ async function role_new(){
 			btn_sm_role.textContent= 'сменить временно роль'
 			div_polz.append(btn_sm_role)
 			div_admin.style.display = 'flex'
+			div_pov_pon.style.display = 'none'
 			usRole(inpAdress.value)
 			
 		}
@@ -975,8 +1070,15 @@ async function role_new(){
 			role.textContent = ''
 		role.textContent = 'Покупатель'
 		div_admin.style.display = 'none'
+		crAddShop()
+		sm_role.textContent = 'отправить запрос на повышениение'
 		// role.textContent = ''
 		btn_sm_role.remove()
+		let a = await myContract.methods.returnRes(user.textContent).call()
+		console.log(a.status)
+		if(a.status == false){
+			div_pov_pon.style.display = 'flex'
+		}
 		}
 	}
 	if(map.role == 2){
@@ -984,17 +1086,35 @@ async function role_new(){
 		role.textContent = 'Продовец'
 		// role.textContent = ''
 		div_admin.style.display = 'none'
+		
+		div_pov_pon.style.display = 'flex'
+		shopSel.style.display='none'
+		sm_role.textContent = 'отправить запрос на понижение'
+		sm_role.addEventListener('click',()=>{
+			zpSmRole('')
+		})
 		btn_sm_role.remove()
+		
 	}
 	if(map.role == 3){
 		role.textContent = ''
 		role.textContent = 'Магазин'
 		// role.textContent = ''
 		div_admin.style.display = 'none'
+		shopsApp.innerHTML=''
+		
+		div_pov_pon.style.display = 'none'
 		btn_sm_role.textContent= 'сменить временно роль'
 		div_polz.append(btn_sm_role)
+	
 	}
 
+	
+}
+async function zpSmRole(adr_sh){
+	let zpr = await myContract.methods.zaprs(adr_sh).send({from:user.textContent,gas:'677676'})
+	console.log(zpr)
+	window.location.reload()
 }
 async function smenRole(){
 	let shop =  await myContract.methods.pereclRole().send({from:user.textContent,gas:'677676'})
@@ -1018,11 +1138,12 @@ async function smenRole(){
 		console.log(role.textContent)
 	}
 }
+inpShop.style.display = 'none'
 function db_imp(a){
 	if(a == 'Продовец'){
 		inpShop.style.display = 'flex'
-		let Shops 
-		inpShop.append()
+		// crAddShop()
+		// inpShop.append()
 	}
 	else{
 		inpShop.style.display = 'none'
@@ -1033,6 +1154,7 @@ async function add_Shop(_adrs,_role,adr_shop,dv_role){
 	console.log(_adrs,_role)
 	let r
 	if(_role == 'Магазин'){
+		
 		r = 3
 	}
 	if(_role == 'Админ'){
@@ -1048,6 +1170,7 @@ async function add_Shop(_adrs,_role,adr_shop,dv_role){
 	console.log(r)
 
 	if(r == 0 || r==1||r==3){
+		
 		if(dv_role == "Продовец"){
 		 await myContract.methods.get_Prod().call((eror,result)=>{
 				if(!eror){
@@ -1069,6 +1192,7 @@ async function add_Shop(_adrs,_role,adr_shop,dv_role){
 		// console.log(sellers.polz)
 		}
 		else{
+			console.log('gfdgdgfdgfdgfdgdg')
 			let shop =  await myContract.methods.appAdmOrShop(_adrs,r).send({from:user.textContent,gas:'677676'})
 		console.log(shop)
 		}
@@ -1078,8 +1202,5 @@ async function add_Shop(_adrs,_role,adr_shop,dv_role){
 		let shop =  await myContract.methods.appProdov(_adrs,adr_shop).send({from:user.textContent,gas:'677676'})
 		console.log(shop)
 	}
-
-}
-function crShop(){
-	
+	window.location.reload()
 }

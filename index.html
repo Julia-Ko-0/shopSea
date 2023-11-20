@@ -18,6 +18,12 @@
     
       </div>
     </div>
+    <div id="div_pov_pon">
+      <select id="shopSel">
+        
+      </select>
+      <button id="sm_role"></button>
+    </div>
     <div id="div_admin">
       
       <h3>
@@ -35,21 +41,28 @@
         <option id="pok">Покупатель</option>
         <option id="pr">Продовец</option>
       </select>
-      <select id="adressShop"onclick="usRole(inpAdress.value)">
+      <select id="adressShop">
       </select>
       <button onclick="add_Shop(inpAdress.value,roles_select.value,inpShop.value,deist_role.value)">
         Сменить
       </button>
+      
 
     </div>
-    <div id="shopsApp">
+    <div class="ddd">
+      <div class="div_Zapr" id="div_Zapr">
 
+      </div>
+      <div class="shopsApp" id="shopsApp">
+
+      </div>
     </div>
+    
 
 
 
       <script src="web3.min.js"></script>
       <script src="app.js" ></script>
-      <script src="abi.js" type="module"></script>
+      <script src="abi.js"></script>
     </body>
 </html>

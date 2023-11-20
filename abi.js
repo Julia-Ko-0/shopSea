@@ -1,4 +1,4 @@
-export let abi =[
+const abi =[
 	{
 		"inputs": [
 			{
@@ -495,4 +495,5 @@ export let abi =[
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
+];
+export default abi;
